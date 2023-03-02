@@ -1,14 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
 
-function Header()
+import zoro from './zoro.jpg';
+
+function Logo(props)
 {
-  return <h1>Hello World</h1>
+  const userPic = <img src={zoro}/>
+  return userPic
 }
 
 function App()
 {
-  return <Header/>
+  return (
+    <div>
+      <h1>Hello World!</h1>
+      <Logo/>
+    </div>
+  )
 }
 
 export default App
