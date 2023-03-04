@@ -1,64 +1,22 @@
-import "./App.css"
-import { useState } from "react"
+import React, { useState } from "react"
+import Header from "./components/Header"
+import './App.css'
 
 function App()
 {
-  const [form, setForm] = useState({
-    firstName: 'First Name',
-    lastName: 'Last Name',
-    email: 'email@email.com'
-  })
+  const [word, setWord] = useState ('Eat')
 
-  function firstNameHandler(e)
+  function handleClick()
   {
-    setForm({form, firstName: e.target.value})
-  }
-  function lastNameHandler(e)
-  {
-    setForm({form, lastName: e.target.value})
-  }
-  function emailHandler(e)
-  {
-    setForm({form, email: e.target.value})
-  }
-  function reset()
-  {
-    setForm({
-      firstName: 'First Name',
-      lastName: 'Last Name',
-      email: 'email@email.com'
-    })
-  }
-  function submit()
-  {
-    return(
-      <div>
-        <br></br><br></br>
-        <p>Greetings</p>
-      </div>
-    )
+    setWord('Drink')
   }
 
-  return(
-    <div>
-      <label for = "firstName">First Name: </label>
-      <input id = "firstName" value = {form.firstName} onChange = {firstNameHandler}></input>
-      <br></br>
-      <label for = "lastName">Last Name: </label>
-      <input id = "lastName" value = {form.lastName} onChange = {lastNameHandler}></input>
-      <br></br>
-      <label for = "email">Email: </label>
-      <input id = "email" value = {form.email} onChange = {emailHandler}></input>
-      <br></br>
-      <button onClick = {reset}>
-        Reset
-      </button>
-      <button onClick={submit}>
-        Submit
-      </button>
-      
+  return (
+    <div className="App">
+      <Header message = {word + ` at Little Lemon`}/>
+      <button onClick={handleClick}>Click Here!</button>
     </div>
   )
 }
 
-export default App
+export default App;
