@@ -1,17 +1,17 @@
-import MealsProvider from './components/MealsProvider';
-import MealsList from './components/MealsList';
-import Counter from './components/Counter';
-
 import './App.css'
+import AboutMe from './components/AboutMe';
+import Homepage from './components/Homepage';
 
 function App()
 {
-  return (
-    <div>
-      <MealsProvider>
-        <MealsList/>
-        <Counter/>
-      </MealsProvider>
+  return(
+    <div className='App'>
+      <nav className='nav'>
+        <a href='#' className='nav-item'>Homepage</a>
+        <a href='#' className='nav-item'>About Me</a>
+        <Homepage />
+        <AboutMe/>
+      </nav>
     </div>
   )
 }
